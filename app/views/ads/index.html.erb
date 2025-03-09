@@ -1,5 +1,7 @@
 <h1>Facebook Ad Insights</h1>
 <form action="/fetch_metrics" method="post">
+  <label for="access_token">Enter Token:</label>
+  <input type="text" name="access_token" id="access_token"><br>
   <label for="ad_id">Enter Ad ID:</label>
   <input type="text" name="ad_id" id="ad_id" required>
   <button type="submit">Fetch Insights</button>
@@ -26,6 +28,7 @@
   document.querySelector("form").addEventListener("submit", async function(event) {
     event.preventDefault();
     const adId = document.querySelector("#ad_id").value;
+    const access_token = document.querySelector("#access_token").value;
     const errorMessage = document.querySelector("#error_message");
     errorMessage.textContent = "";
 
@@ -33,7 +36,7 @@
       const response = await fetch("/fetch_metrics", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ad_id: adId })
+        body: JSON.stringify({ ad_id: adId, access_token: access_token })
       });
 
       const data = await response.json();

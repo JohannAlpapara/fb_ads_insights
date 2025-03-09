@@ -12,8 +12,8 @@ This project is a simple web application that allows users to input a Facebook A
 ## Tech Stack
 - **Backend:** Ruby on Rails
 - **Frontend:** HTML, CSS, JavaScript
-- **Database:** SQLite
-- **API Integration:** Facebook Marketing API
+- **Database:** SQLite 3.31.1
+- **API Integration:** Facebook Graph API
 
 ## Installation & Setup
 
@@ -33,20 +33,14 @@ This project is a simple web application that allows users to input a Facebook A
  rails db:migrate
 ```
 
-### 4. Set Up Environment Variables
-Create a `.env` file in the project root and add:
-```sh
- FACEBOOK_ACCESS_TOKEN=your_facebook_api_token
-```
-
-### 5. Start the Rails Server
+### 4. Start the Rails Server
 ```sh
  rails server
 ```
 
 ## Usage
 1. Open `http://localhost:3000` in your browser.
-2. Enter a valid Facebook Ad ID.
+2. Enter a valid Access Token and Facebook Ad ID.
 3. Click "Fetch Insights" to retrieve and display ad performance metrics.
 
 ## AI Assistance
