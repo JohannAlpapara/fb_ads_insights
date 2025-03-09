@@ -27,7 +27,6 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 gem 'httparty'  # For API requests
-gem 'dotenv-rails' # For managing environment variables
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"

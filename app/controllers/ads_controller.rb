@@ -15,7 +15,7 @@ class AdsController < ApplicationController
   def fetch_metrics
     ad_id = params[:ad_id]
     access_token = params[:access_token]
-    response = fetch_facebook_ad_insights(ad_id)
+    response = fetch_facebook_ad_insights(ad_id, access_token)
     
     if response
       ad_name = fetch_ad_name(ad_id, access_token)
@@ -38,8 +38,7 @@ class AdsController < ApplicationController
 
   private
 
-  def fetch_facebook_ad_insights(ad_id)
-    access_token = params[:access_token]
+  def fetch_facebook_ad_insights(ad_id, access_token)
     url = "https://graph.facebook.com/v22.0/#{ad_id}/insights?fields=impressions,clicks,actions,frequency,spend,cost_per_action_type&access_token=#{access_token}"
     response = HTTParty.get(url)
     puts "API Response: #{response.body}"
