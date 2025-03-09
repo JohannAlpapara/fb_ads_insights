@@ -1,24 +1,54 @@
-# README
+# Facebook Ads Insights
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Project Overview
+This project is a simple web application that allows users to input a Facebook Ad ID or Ad Set ID and retrieve key performance metrics from the Facebook Marketing API. The metrics are stored in an SQLite database for quick retrieval.
 
-Things you may want to cover:
+## Features
+- Input an Ad ID or Ad Set ID
+- Fetch relevant metrics from the Facebook Ads API
+- Store recent queries in an SQLite database
+- Display metrics in a simple HTML table
 
-* Ruby version
+## Tech Stack
+- **Backend:** Ruby on Rails
+- **Frontend:** HTML, CSS, JavaScript
+- **Database:** SQLite
+- **API Integration:** Facebook Marketing API
 
-* System dependencies
+## Installation & Setup
 
-* Configuration
+### 1. Clone the Repository
+```sh
+ git clone https://github.com/yourusername/fb_ads_insights.git
+ cd fb_ads_insights
+```
 
-* Database creation
+### 2. Install Dependencies
+```sh
+ bundle install
+```
 
-* Database initialization
+### 3. Setup Database
+```sh
+ rails db:migrate
+```
 
-* How to run the test suite
+### 4. Set Up Environment Variables
+Create a `.env` file in the project root and add:
+```sh
+ FACEBOOK_ACCESS_TOKEN=your_facebook_api_token
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+### 5. Start the Rails Server
+```sh
+ rails server
+```
 
-* Deployment instructions
+## Usage
+1. Open `http://localhost:3000` in your browser.
+2. Enter a valid Facebook Ad ID.
+3. Click "Fetch Insights" to retrieve and display ad performance metrics.
 
-* ...
+## AI Assistance
+- ChatGPT was used to get a suggestion on what Facebook API can I use.
+- Copilot was used for minor code optimizations and auto-suggestions.

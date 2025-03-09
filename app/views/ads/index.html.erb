@@ -1,0 +1,62 @@
+<h1>Facebook Ad Insights</h1>
+<form action="/fetch_metrics" method="post">
+  <label for="ad_id">Enter Ad ID:</label>
+  <input type="text" name="ad_id" id="ad_id" required>
+  <button type="submit">Fetch Insights</button>
+</form>
+
+<p id="error_message" style="color: red;"></p>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>AD Name</th>
+      <th>Impressions</th>
+      <th>Clicks</th>
+      <th>Conversions</th>
+      <th>Cost Per Result</th>
+      <th>Frequency</th>
+      <th>Ad Spend</th>
+    </tr>
+  </thead>
+  <tbody id="insights_table"></tbody>
+</table>
+
+<script>
+  document.querySelector("form").addEventListener("submit", async function(event) {
+    event.preventDefault();
+    const adId = document.querySelector("#ad_id").value;
+    const errorMessage = document.querySelector("#error_message");
+    errorMessage.textContent = "";
+
+    try {
+      const response = await fetch("/fetch_metrics", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ad_id: adId })
+      });
+
+      const data = await response.json();
+      console.log("Server Response:", data);
+
+      if (!response.ok) {
+        throw new Error(data.error || "Unknown error occurred");
+      }
+
+      document.querySelector("#insights_table").innerHTML = `
+        <tr>
+          <td>${data.ad_name}</td>
+          <td>${data.impressions}</td>
+          <td>${data.clicks}</td>
+          <td>${data.conversions}</td>
+          <td>${data.cost_per_result}</td>
+          <td>${data.frequency}</td>
+          <td>${data.ad_spend}</td>
+        </tr>
+      `;
+    } catch (error) {
+      console.error("Fetch Error:", error);
+      errorMessage.textContent = `Error: ${error.message}`;
+    }
+  });
+</script>

@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ad_id: MyString
+  impressions: 1
+  clicks: 1
+  conversions: 1
+  cost_per_result: 9.99
+  frequency: 9.99
+  ad_spend: 9.99
+
+two:
+  ad_id: MyString
+  impressions: 1
+  clicks: 1
+  conversions: 1
+  cost_per_result: 9.99
+  frequency: 9.99
+  ad_spend: 9.99

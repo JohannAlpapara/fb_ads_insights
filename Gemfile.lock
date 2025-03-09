@@ -99,14 +99,23 @@ GEM
     concurrent-ruby (1.3.5)
     connection_pool (2.5.0)
     crass (1.0.6)
+    csv (3.3.2)
     date (3.4.1)
     debug (1.10.0)
       irb (~> 1.10)
       reline (>= 0.3.8)
+    dotenv (3.1.7)
+    dotenv-rails (3.1.7)
+      dotenv (= 3.1.7)
+      railties (>= 6.1)
     drb (2.2.1)
     erubi (1.13.1)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    httparty (0.22.0)
+      csv
+      mini_mime (>= 1.0.0)
+      multi_xml (>= 0.5.2)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     importmap-rails (2.0.3)
@@ -133,9 +142,9 @@ GEM
     marcel (1.0.4)
     matrix (0.4.2)
     mini_mime (1.1.5)
-    mini_portile2 (2.8.8)
     minitest (5.25.4)
     msgpack (1.8.0)
+    multi_xml (0.6.0)
     mutex_m (0.3.0)
     net-imap (0.4.19)
       date
@@ -218,8 +227,7 @@ GEM
       actionpack (>= 6.1)
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
-    sqlite3 (1.3.11)
-      mini_portile2 (~> 2.8.0)
+    sqlite3 (1.4.2)
     stimulus-rails (1.3.4)
       railties (>= 6.0.0)
     stringio (3.1.5)
@@ -251,13 +259,15 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  dotenv-rails
+  httparty
   importmap-rails
   jbuilder
   puma (>= 5.0)
   rails (~> 7.1.5, >= 7.1.5.1)
   selenium-webdriver
   sprockets-rails
-  sqlite3 (>= 1.3)
+  sqlite3 (= 1.4.2)
   stimulus-rails
   turbo-rails
   tzinfo-data
