@@ -1,8 +1,8 @@
 # Facebook Ads Insights
-**Loom Link** https://www.loom.com/share/38d022b429594b3eb9ed47376f3bfb3c?sid=056f83c3-60d5-403b-b7b6-9be2e568e2b5
-**DEMO Link:** https://d195-202-175-223-84.ngrok-free.app/
+- **Loom Link** https://www.loom.com/share/38d022b429594b3eb9ed47376f3bfb3c?sid=056f83c3-60d5-403b-b7b6-9be2e568e2b5
+- **DEMO Link:** https://d195-202-175-223-84.ngrok-free.app/
 
-**Get your Access Token at Facebook Developers - Graph API Explorer** https://developers.facebook.com/tools/explorer/976380711300059/?method=GET&path=me%3Ffields%3Dimpressions%2Cclicks%2Cconversions%2Ccost_per_result%2Cfrequency%2Cad_spend&version=v22.0
+- **Get your Access Token at Facebook Developers - Graph API Explorer** https://developers.facebook.com/tools/explorer/976380711300059/?method=GET&path=me%3Ffields%3Dimpressions%2Cclicks%2Cconversions%2Ccost_per_result%2Cfrequency%2Cad_spend&version=v22.0
 
 ## Project Overview
 This project is a simple web application that allows users to input a Facebook Ad ID or Ad Set ID and retrieve key performance metrics from the Facebook Marketing API. The metrics are stored in an SQLite database for quick retrieval.
